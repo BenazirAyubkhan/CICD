@@ -1,12 +1,12 @@
 pipeline {
     agent any
     environment {
-        PROJECT_ID = 'inspired-cortex-435108-k4'
+        PROJECT_ID = 'montgomery-434711-c5'
         IMAGE_NAME = 'gcp-demo/node'
         APP_NAME = "my-app"
         DOCKER_HOST = "tcp://dind-service:2375"
         IMAGE_TAG = "${env.BUILD_NUMBER}"
-        CLUSTER_NAME = " example-cluster"
+        CLUSTER_NAME = "primary-k8s"
         GCR_REGISTRY = "us-central1-docker.pkg.dev"
         GCR_IMAGE = "${GCR_REGISTRY}/${PROJECT_ID}/${IMAGE_NAME}:${IMAGE_TAG}"
         GOOGLE_APPLICATION_CREDENTIALS = credentials('gcp_access') // Jenkins credential ID for GCP service account
